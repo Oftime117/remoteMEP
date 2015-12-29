@@ -11,5 +11,7 @@ public abstract class StatutIng extends StatutFI {
     public void setDepartement(Departement dept) {
         this.departement = dept;
     }
+    
+    public abstract boolean stageValable(String nomEnt);
 
 }

@@ -12,4 +12,5 @@ public abstract class StatutFI extends Statut {
         this.origin = origin;
     }
 
+    public abstract boolean stageValable(String nomEnt);
 }
