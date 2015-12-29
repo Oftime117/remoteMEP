@@ -9,7 +9,7 @@ public class Etudiant {
 
     private String name;
 
-    private Statut statut;
+	private Statut statut;
 
     private Promotion promotion;
     

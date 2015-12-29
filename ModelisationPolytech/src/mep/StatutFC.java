@@ -27,4 +27,8 @@ public class StatutFC extends Statut {
         this.modeFinancement = mode;
     }
 
+    public  boolean stageValable(String nomEnt)
+    {
+    	return false;
+    }
 }

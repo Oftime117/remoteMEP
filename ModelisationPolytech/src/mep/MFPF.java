@@ -18,4 +18,12 @@ public final class MFPF extends ModeFinancement {
         this.nomEntreprise = nom;
     }
 
+    /*l'eleve doit faire son stage dans son entreprise*/
+    public  boolean verifieStage(String nomEnt)
+    {
+    	if (this.getNomEntreprise().compareTo(nomEnt) == 0)
+    		return true;
+    	else 
+    		return false;
+    }
 }
