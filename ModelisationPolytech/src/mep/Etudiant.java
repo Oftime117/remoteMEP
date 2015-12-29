@@ -9,10 +9,12 @@ public class Etudiant {
 
     private String name;
 
-    public Statut statut;
+    private Statut statut;
 
     private Promotion promotion;
-
+    
+    private boolean redoublant;
+    
     public Etudiant(String name, Date dateEntree) {
         this.name = name;
         this.dateEntree = dateEntree;
