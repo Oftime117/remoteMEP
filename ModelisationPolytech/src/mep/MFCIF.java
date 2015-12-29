@@ -30,5 +30,14 @@ public final class MFCIF extends ModeFinancement {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.nomEntreprise = nom;
     }
+    
+    /*l'eleve doit prendre un stage en dehors de son entreprise*/
+    public  boolean verifieStage(String nomEnt)
+    {
+    	if (this.getNomEntreprise().compareTo(nomEnt) == 0)
+    		return false;
+    	else 
+    		return true;
+    }
 
 }

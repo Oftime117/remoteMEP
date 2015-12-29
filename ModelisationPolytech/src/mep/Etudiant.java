@@ -8,8 +8,12 @@ public class Etudiant {
     private Date dateEntree;
 
     private String name;
+    private boolean redoublant;
 
-    public Statut statut;
+   
+
+	public Statut statut;
+    
 
     private Promotion promotion;
 
@@ -34,6 +38,14 @@ public class Etudiant {
     public void setName(String nom) {
         this.name = nom;
     }
+    
+    public boolean isRedoublant() {
+		return redoublant;
+	}
+
+	public void setRedoublant(boolean redoublant) {
+		this.redoublant = redoublant;
+	}
 
     public Promotion getPromotion() {
         return this.promotion;
@@ -46,5 +58,10 @@ public class Etudiant {
     public Statut getStatut() {
         return this.statut;
     }
-
+    
+    /* permet de savoir si l'entreprise demande par l'etudiant est correcte ou non face a son cursus*/
+    public boolean validationStage(String entreprise)
+    {
+    	return this.getStatut().stageValable(entreprise);
+    }
 }

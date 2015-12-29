@@ -1,5 +1,5 @@
 package mep;
-/**/
+
 
 public class Departement {
     private String nomDept;

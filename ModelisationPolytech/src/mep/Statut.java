@@ -14,5 +14,7 @@ public abstract class Statut {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.redoublant = value;
     }
+    
+    public abstract boolean stageValable(String nomEnt);
 
 }
