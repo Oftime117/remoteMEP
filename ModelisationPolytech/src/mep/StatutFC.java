@@ -31,4 +31,12 @@ public class StatutFC extends Statut {
     {
     	return false;
     }
+
+	@Override
+	public String toString() {
+		return "Formation Continue \n\tDepartement: " + departement 
+				+ "\n\tMode de financement: " + modeFinancement;
+	}
+    
+    
 }

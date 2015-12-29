@@ -52,4 +52,11 @@ public class Departement {
         this.dispoAPP = dispoAPP;
     }
 
+	@Override
+	public String toString() {
+		return "Departement \n[Nom : " + nomDept + "\nDispose de ETs: " + dispoET
+				+ "\nDispose de Formation continue: " + dispoFC + "\nDispose d'apprenties: " + dispoAPP + "\n]";
+	}
+
+    
 }

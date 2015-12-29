@@ -23,4 +23,13 @@ public class StatutAPP extends StatutIng {
     		return false;
     }
 
+	@Override
+	public String toString() {
+		return "Apprenti \n\tNom de L'entreprise : " + nomEntreprise
+				+ "\n\tDepartement: " + departement
+				+ "\n\tOrigine: " + origin;
+	}
+    
+    
+
 }

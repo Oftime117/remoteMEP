@@ -11,4 +11,11 @@ public class StatutPeip extends StatutFI {
     	return false;
     }
 
+	@Override
+	public String toString() {
+		return "Élève PeiP \n\tOrigine" + origin;
+	}
+    
+    
+    
 }

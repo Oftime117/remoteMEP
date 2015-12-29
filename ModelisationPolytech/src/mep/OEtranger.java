@@ -6,11 +6,11 @@ public class OEtranger extends Origin {
     private String pays;
 
     public String getPays() {
-        return this.Pays;
+        return this.pays;
     }
 
     public void setPays(String pays) {
-        this.Pays = value;
+        this.pays = pays;
     }
 
 }

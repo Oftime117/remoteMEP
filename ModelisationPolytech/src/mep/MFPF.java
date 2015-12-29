@@ -26,4 +26,10 @@ public final class MFPF extends ModeFinancement {
     	else 
     		return false;
     }
+
+	@Override
+	public String toString() {
+		return "Plan Formation \n\tNom de l'entreprise: " + nomEntreprise ;
+	}
+    
 }
