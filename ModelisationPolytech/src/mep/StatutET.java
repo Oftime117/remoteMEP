@@ -13,6 +13,4 @@ public class StatutET extends StatutIng {
 	public String toString() {
 		return "Étudiant \n\tDepartement: " + departement + "\n\tOrigine: " + origin;
 	}
-	
-	
 }

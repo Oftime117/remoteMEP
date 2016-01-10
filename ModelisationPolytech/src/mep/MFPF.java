@@ -31,5 +31,4 @@ public final class MFPF extends ModeFinancement {
 	public String toString() {
 		return "Plan Formation \n\tNom de l'entreprise: " + nomEntreprise ;
 	}
-    
 }

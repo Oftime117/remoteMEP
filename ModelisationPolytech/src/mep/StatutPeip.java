@@ -15,7 +15,5 @@ public class StatutPeip extends StatutFI {
 	public String toString() {
 		return "Élève PeiP \n\tOrigine" + origin;
 	}
-    
-    
-    
+
 }

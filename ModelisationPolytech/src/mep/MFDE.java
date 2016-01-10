@@ -15,5 +15,4 @@ public final class MFDE extends ModeFinancement {
 	public String toString() {
 		return "Demandeur d'emploi";
 	}
-    
 }

@@ -41,7 +41,5 @@ public final class MFCIF extends ModeFinancement {
 		return "Congé individuel de Formation\n\t\tOrganisme Gestionnaire: " + orgaGest 
 				+ "\n\t\tNom de l'entreprise: " + nomEntreprise;
 	}
-    
-    
 
 }

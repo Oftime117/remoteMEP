@@ -29,7 +29,4 @@ public class StatutAPP extends StatutIng {
 				+ "\n\tDepartement: " + departement
 				+ "\n\tOrigine: " + origin;
 	}
-    
-    
-
 }

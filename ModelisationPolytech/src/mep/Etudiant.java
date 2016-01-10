@@ -8,12 +8,14 @@ public class Etudiant implements Comparable<Etudiant> {
     private Date dateEntree;
 
     private String name;
+    private boolean redoublant;
 
 	private Statut statut;
 
+	
+
     private Promotion promotion;
     
-    private boolean redoublant;
     
     public Etudiant(String name, Date dateEntree) {
         this.name = name;
@@ -36,6 +38,14 @@ public class Etudiant implements Comparable<Etudiant> {
     public void setName(String nom) {
         this.name = nom;
     }
+    
+    public boolean isRedoublant() {
+		return redoublant;
+	}
+
+	public void setRedoublant(boolean redoublant) {
+		this.redoublant = redoublant;
+	}
 
     public Promotion getPromotion() {
         return this.promotion;
@@ -64,5 +74,10 @@ public class Etudiant implements Comparable<Etudiant> {
 	}
     
     
-
+    
+    /* permet de savoir si l'entreprise demande par l'etudiant est correcte ou non face a son cursus*/
+    public boolean validationStage(String entreprise)
+    {
+    	return this.getStatut().stageValable(entreprise);
+    }
 }

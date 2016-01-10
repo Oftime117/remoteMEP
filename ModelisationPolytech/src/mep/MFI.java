@@ -10,10 +10,8 @@ public final class MFI extends ModeFinancement {
     {
     	return true;
     }
-
 	@Override
 	public String toString() {
 		return "Individuel";
 	}
-    
 }
