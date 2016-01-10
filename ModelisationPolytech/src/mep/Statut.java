@@ -17,6 +17,13 @@ public abstract class Statut {
     }
 
     
+    /*permet de valider un stage ou non*/
     public abstract boolean stageValable(String nomEnt);
+    
+    /*accorde la possibilite d'un changement de statut ou non*/
+    public abstract boolean changementStatut(Statut newStatut);
+    
+    /*vérifie que toutes les données sont présente dans le statut*/
+    public abstract boolean verifStat();
 
 }

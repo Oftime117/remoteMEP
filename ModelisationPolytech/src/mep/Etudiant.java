@@ -1,33 +1,36 @@
 package mep;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-//Classe abstraite représentant les Étudiants
+//Classe représentant les Étudiants
 public class Etudiant implements Comparable<Etudiant> {
+
+
 /* Date d'entrée dans l'école */
-    private Date dateEntree;
+    private LocalDate dateEntree;
 
     private String name;
     private boolean redoublant;
 
 	private Statut statut;
-
-	
-
     private Promotion promotion;
+
     
     
-    public Etudiant(String name, Date dateEntree) {
+
+
+    public Etudiant(String name, LocalDate dateEntree) {
+
         this.name = name;
         this.dateEntree = dateEntree;
         this.redoublant = false;
     }
 
-    public Date getDateEntree() {
+    public LocalDate getDateEntree() {
         return this.dateEntree;
     }
 
-    public void setDateEntree(Date date) {
+    public void setDateEntree(LocalDate date) {
         this.dateEntree = date;
     }
 
@@ -76,8 +79,36 @@ public class Etudiant implements Comparable<Etudiant> {
     
     
     /* permet de savoir si l'entreprise demande par l'etudiant est correcte ou non face a son cursus*/
-    public boolean validationStage(String entreprise)
+    public boolean validationStage5A(String entreprise)
     {
-    	return this.getStatut().stageValable(entreprise);
+    	/* on verifie d'abords que l'eleve est en 5 eme annee.*/
+    	if ( this.getPromotion().anneeCourante == 5)
+    		return this.getStatut().stageValable(entreprise);
+    	else 
+    		return false;
+    }
+    
+    /*permet de changer de statut*/
+    public boolean changeStatut (Statut newStatut)
+    {
+    	/* si le statut est incomplet*/
+    	if(newStatut.verifStat() != true) return false;
+ 
+    	/*premiere inscription dans l'ecole*/
+    	if(statut == null)
+    	{
+    		
+    			statut = newStatut;
+    			return true;
+    	}
+    	else
+    	{
+    		boolean res = getStatut().changementStatut(newStatut);
+        	
+        	if(res)
+        		statut = newStatut;
+        	return res;
+    	}
+    	
     }
 }

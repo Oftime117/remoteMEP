@@ -7,8 +7,9 @@ public class Origin {
 /* Diplome d'origine avant l'arrivée à Polytech (on suppose que les post bacs ont eu le Baccalauréat */
     protected String diplome;
 
-    public Origin(String etabOrigin) {
+    public Origin(String etabOrigin, String diplome) {
         this.etabOrigin = etabOrigin;
+        this.diplome = diplome;
     }
 
     public String getEtabOrigin() {
