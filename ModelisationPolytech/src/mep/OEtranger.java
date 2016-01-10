@@ -2,15 +2,22 @@ package mep;
 
 
 public class OEtranger extends Origin {
-/* Pays d'origine */
+
+	/* Pays d'origine */
     private String pays;
 
+    
+    public OEtranger(String etabOrigin, String diplome, String p) {
+		super(etabOrigin, diplome);
+		this.pays = p;
+	}
+    
     public String getPays() {
-        return this.Pays;
+        return this.pays;
     }
 
-    public void setPays(String pays) {
-        this.Pays = value;
+    public void setPays(String p) {
+        this.pays = p;
     }
 
 }

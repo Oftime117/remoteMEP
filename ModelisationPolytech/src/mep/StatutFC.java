@@ -29,6 +29,15 @@ public class StatutFC extends Statut {
 
     public  boolean stageValable(String nomEnt)
     {
-    	return false;
+    	return (this.getModeFinancement().verifieStage(nomEnt));
+    }
+    
+    /*accorde la possibilite d'un changement de statut ou non*/
+    public boolean changementStatut(Statut newStatut)
+    {
+    	if(newStatut instanceof StatutFC)
+    		return true;
+    	else 
+    		return false;
     }
 }

@@ -15,6 +15,10 @@ public abstract class Statut {
         this.redoublant = value;
     }
     
+    /*permet de valider un stage ou non*/
     public abstract boolean stageValable(String nomEnt);
+    
+    /*accorde la possibilite d'un changement de statut ou non*/
+    public abstract boolean changementStatut(Statut newStatut);
 
 }

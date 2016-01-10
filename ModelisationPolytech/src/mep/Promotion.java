@@ -5,6 +5,7 @@ package mep;
 public class Promotion {
 /* Année de sortie (de promotion) d'un élève */
     private int anneeSortie;
+    public int anneeCourante;
 
 /* Nom de bapteme de la promotion */
     private String nomBapteme;
