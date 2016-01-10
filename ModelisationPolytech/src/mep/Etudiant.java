@@ -2,9 +2,10 @@ package mep;
 
 import java.time.LocalDate;
 
-//Classe abstraite représentant les Étudiants
-public class Etudiant {
-	
+//Classe représentant les Étudiants
+public class Etudiant implements Comparable<Etudiant> {
+
+
 /* Date d'entrée dans l'école */
     private LocalDate dateEntree;
 
@@ -12,7 +13,6 @@ public class Etudiant {
     private boolean redoublant;   
 
 	protected Statut statut;    
-
     private Promotion promotion;
 
     public Etudiant(String name, LocalDate dateEntree) {
@@ -56,6 +56,21 @@ public class Etudiant {
     public Statut getStatut() {
         return this.statut;
     }
+
+	@Override
+	public String toString() {
+		return name + "\n\tDate d'entrée: " + dateEntree
+				+ "\n\tStatut : " + statut 
+				+ "\n\tPromotion : " + promotion
+				+ "\n\tEst un redoublant : " + redoublant;
+	}
+
+	@Override
+	public int compareTo(Etudiant o) {
+		// TODO Auto-generated method stub
+		return name.compareTo(o.getName());
+	}
+    
     
     /* permet de savoir si l'entreprise demande par l'etudiant est correcte ou non face a son cursus*/
     public boolean validationStage5A(String entreprise)
@@ -66,7 +81,7 @@ public class Etudiant {
     	else 
     		return false;
     }
-    
+
     /*permet de changer de statut*/
     public boolean changeStatut (Statut newStatut)
     {

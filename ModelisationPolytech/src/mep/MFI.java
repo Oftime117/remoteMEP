@@ -2,7 +2,7 @@ package mep;
 
 
 public final class MFI extends ModeFinancement {
-    public void MFI() {
+    public MFI() {
     }
 
     /*l'eleve n'a pas de contraintes particuliere pour son stage*/
@@ -10,4 +10,8 @@ public final class MFI extends ModeFinancement {
     {
     	return true;
     }
+	@Override
+	public String toString() {
+		return "Individuel";
+	}
 }

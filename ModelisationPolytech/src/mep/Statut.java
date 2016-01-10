@@ -2,6 +2,7 @@ package mep;
 
 
 public abstract class Statut {
+
 /* Variable valant vrai si l'étudiant à redoublé une fois */
     protected boolean redoublant;
 
@@ -14,6 +15,7 @@ public abstract class Statut {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.redoublant = value;
     }
+
     
     /*permet de valider un stage ou non*/
     public abstract boolean stageValable(String nomEnt);
@@ -23,6 +25,4 @@ public abstract class Statut {
     
     /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
     public abstract boolean verifStat();
-    
-
 }

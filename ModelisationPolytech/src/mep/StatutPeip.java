@@ -13,6 +13,19 @@ public class StatutPeip extends StatutFI {
     	return false;
     }
 
+	@Override
+	public String toString() {
+		return "Ã‰lÃ¨ve PeiP \n\tOrigine" + origin;
+	}
+
+    
+    /*vï¿½rifie que toutes les donnï¿½es sont prï¿½sente dans le statut*/
+    public boolean verifStat()
+    {
+    	if(origin != null)
+    		return true;
+    	return false;
+    }
     /*accorde la possibilite d'un changement de statut ou non*/
     public  boolean changementStatut(Statut newStatut)
     {
@@ -22,18 +35,11 @@ public class StatutPeip extends StatutFI {
 			return false;
     }
     
-    /*vérifie que toutes les données sont présente dans le statut*/
-    public boolean verifStat()
-    {
-    	if(origin != null)
-    		return true;
-    	return false;
-    }
     
-    /*vérifie si le département existe dans le cursus*/
+    /*vï¿½rifie si le dï¿½partement existe dans le cursus*/
     public boolean verifDep(Departement d)
     {
-    	/* pas de département pour les peip*/
+    	/* pas de dï¿½partement pour les peip*/
     	return false;
     }
 }

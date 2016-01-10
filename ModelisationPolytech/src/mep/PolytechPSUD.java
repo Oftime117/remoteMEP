@@ -1,21 +1,34 @@
 package mep;
 
-import java.util.HashSet;
-import java.util.List;
+import java.util.HashMap;
 
 public class PolytechPSUD {
-    private HashSet<Etudiant> etudiants = new HashSet<Etudiant> ();
+    private HashMap<Integer, Promotion> promotionHT;
+    private boolean hasCTI;
+    
+    
+    private PolytechPSUD() {
+    	/* Initialiser la hashtable */
+    	promotionHT = new HashMap<Integer, Promotion> ();
+        hasCTI = true;
+    }
 
-    public PolytechPSUD(HashSet<Etudiant> etudiants) {
+    /* Méthode du Holder qui permet de créer un singleton sécurisé */
+    private static class SingletonHolder{
+    	private final static PolytechPSUD instance = new PolytechPSUD();
     }
     
+    public static PolytechPSUD getInstance() {
+    	return SingletonHolder.instance;
+    }
+
    /* public void changementDAnnee(HashSet<Etudiant> [] nonRedoublant)
     {
     	HashSet<Etudiant> redoublant = etudiants;
     	int taille = nonRedoublant.length;
     	if(taille != 5) 
     	{
-    		System.err.println("Tableau non conforme � la d�finition");
+    		System.err.println("Tableau non conforme � la d�finition");
     		return;
     	}
     	
@@ -33,4 +46,22 @@ public class PolytechPSUD {
     	}
     }*/
 
+	/**
+	 * @return the promotionHT
+	 */
+	public HashMap<Integer, Promotion> getPromotionHT() {
+		return promotionHT;
+	}
+
+	/**
+	 * @return the hasCTI
+	 */
+	public boolean isHasCTI() {
+		return hasCTI;
+	}
+    
+    public void addPromotion(Promotion p) {
+    	promotionHT.computeIfAbsent(p.getAnneeSortie(), k -> p);
+    }
+    
 }

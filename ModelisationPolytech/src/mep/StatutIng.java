@@ -26,9 +26,10 @@ public abstract class StatutIng extends StatutFI {
     public  boolean changementStatut(Statut newStatut)
     {
     	/*un eleve ne peut pas changer de statut*/
+    	a changer
     	return false;
     }
 
-    /*vérifie que toutes les données sont présente dans le statut*/
+    /*vï¿½rifie que toutes les donnï¿½es sont prï¿½sente dans le statut*/
     public abstract boolean verifStat();
 }

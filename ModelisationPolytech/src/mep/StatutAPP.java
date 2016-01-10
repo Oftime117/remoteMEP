@@ -19,7 +19,7 @@ public class StatutAPP extends StatutIng {
         this.nomEntreprise = nom;
     }
     
-    /* permet de verifier le stage de 5 eme année*/
+    /* permet de verifier le stage de 5 eme annï¿½e*/
     public  boolean stageValable(String nomEnt)
     {
     	if(nomEnt.compareTo(nomEntreprise) == 0)
@@ -28,7 +28,7 @@ public class StatutAPP extends StatutIng {
     		return false;
     }
     
-    /*vérifie que toutes les données sont présente dans le statut*/
+    /*vï¿½rifie que toutes les donnï¿½es sont prï¿½sente dans le statut*/
     public boolean verifStat()
     {
     	if(departement != null)
@@ -39,4 +39,10 @@ public class StatutAPP extends StatutIng {
     	return false;
     }
 
+	@Override
+	public String toString() {
+		return "Apprenti \n\tNom de L'entreprise : " + nomEntreprise
+				+ "\n\tDepartement: " + departement
+				+ "\n\tOrigine: " + origin;
+	}
 }

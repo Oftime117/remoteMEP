@@ -15,9 +15,7 @@ public class OEtranger extends Origin {
     public String getPays() {
         return this.pays;
     }
-
     public void setPays(String p) {
         this.pays = p;
     }
-
 }

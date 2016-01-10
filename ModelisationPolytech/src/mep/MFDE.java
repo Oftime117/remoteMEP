@@ -10,4 +10,9 @@ public final class MFDE extends ModeFinancement {
     {
     	return true;
     }
+
+	@Override
+	public String toString() {
+		return "Demandeur d'emploi";
+	}
 }
