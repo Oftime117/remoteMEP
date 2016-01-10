@@ -25,7 +25,7 @@ public abstract class StatutIng extends StatutFI {
     /*accorde la possibilite d'un changement de statut ou non*/
     public  boolean changementStatut(Statut newStatut)
     {
-    	/*un eleve ne peut pas aller d'alternant à classique*/
+    	/*un eleve ne peut pas changer de statut*/
     	return false;
     }
 

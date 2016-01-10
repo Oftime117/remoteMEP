@@ -10,14 +10,14 @@ public class StatutET extends StatutIng {
 
 	/* un etudiant en cursus initial et non alternant 
 	 * peux aller dans n'importe qu'elle entreprise
-	 * il faut juste vérifier qu'il est en 5 année*/
+	 * il faut juste vï¿½rifier qu'il est en 5 annï¿½e*/
 	public  boolean stageValable(String nomEnt)
 	{
 		
 		return true;
 	}
 	
-	/*vérifie que toutes les données sont présente dans le statut*/
+	/*vï¿½rifie que toutes les donnï¿½es sont prï¿½sente dans le statut*/
     public boolean verifStat()
     {
     	if(departement != null)
@@ -26,4 +26,6 @@ public class StatutET extends StatutIng {
     	
     	return false;
     }
+    
+
 }

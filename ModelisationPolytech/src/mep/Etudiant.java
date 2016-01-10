@@ -11,7 +11,7 @@ public class Etudiant {
     private String name;
     private boolean redoublant;   
 
-	public Statut statut;    
+	protected Statut statut;    
 
     private Promotion promotion;
 
@@ -61,7 +61,7 @@ public class Etudiant {
     public boolean validationStage5A(String entreprise)
     {
     	/* on verifie d'abords que l'eleve est en 5 eme annee.*/
-    	if ( this.getPromotion().anneeCourante == 5)
+    	if ( this.getPromotion().getAnneeCourante() == 5)
     		return this.getStatut().stageValable(entreprise);
     	else 
     		return false;
@@ -90,4 +90,6 @@ public class Etudiant {
     	}
     	
     }
+    
+  
 }

@@ -5,9 +5,18 @@ package mep;
 public class Promotion {
 /* Année de sortie (de promotion) d'un élève */
     private int anneeSortie;
-    public int anneeCourante;
+    private int anneeCourante;
 
-/* Nom de bapteme de la promotion */
+
+public int getAnneeCourante() {
+		return anneeCourante;
+	}
+
+	public void setAnneeCourante(int anneeCourante) {
+		this.anneeCourante = anneeCourante;
+	}
+
+	/* Nom de bapteme de la promotion */
     private String nomBapteme;
 
     public Promotion(int anneeSortie, String nomBapteme) {

@@ -29,4 +29,11 @@ public class StatutPeip extends StatutFI {
     		return true;
     	return false;
     }
+    
+    /*vérifie si le département existe dans le cursus*/
+    public boolean verifDep(Departement d)
+    {
+    	/* pas de département pour les peip*/
+    	return false;
+    }
 }
