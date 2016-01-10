@@ -20,4 +20,6 @@ public abstract class StatutFI extends Statut {
     
     /*accorde la possibilite d'un changement de statut ou non*/
     public abstract boolean changementStatut(Statut newStatut);
+    
+    
 }

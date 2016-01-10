@@ -70,11 +70,15 @@ public class Etudiant {
     /*permet de changer de statut*/
     public boolean changeStatut (Statut newStatut)
     {
+    	/* si le statut est incomplet*/
+    	if(newStatut.verifStat() != true) return false;
+ 
     	/*premiere inscription dans l'ecole*/
     	if(statut == null)
     	{
-    		statut = newStatut;
-    		return true;
+    		
+    			statut = newStatut;
+    			return true;
     	}
     	else
     	{

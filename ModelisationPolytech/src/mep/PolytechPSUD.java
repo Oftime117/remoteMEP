@@ -8,8 +8,8 @@ public class PolytechPSUD {
 
     public PolytechPSUD(HashSet<Etudiant> etudiants) {
     }
-    /*
-    public void changementDAnnee(HashSet<Etudiant> [] nonRedoublant)
+    
+   /* public void changementDAnnee(HashSet<Etudiant> [] nonRedoublant)
     {
     	HashSet<Etudiant> redoublant = etudiants;
     	int taille = nonRedoublant.length;

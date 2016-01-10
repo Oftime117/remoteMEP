@@ -20,5 +20,8 @@ public abstract class Statut {
     
     /*accorde la possibilite d'un changement de statut ou non*/
     public abstract boolean changementStatut(Statut newStatut);
+    
+    /*vérifie que toutes les données sont présente dans le statut*/
+    public abstract boolean verifStat();
 
 }

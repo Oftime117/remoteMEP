@@ -16,4 +16,14 @@ public class StatutET extends StatutIng {
 		
 		return true;
 	}
+	
+	/*vérifie que toutes les données sont présente dans le statut*/
+    public boolean verifStat()
+    {
+    	if(departement != null)
+    		if(origin != null)
+    			return true;
+    	
+    	return false;
+    }
 }

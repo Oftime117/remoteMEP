@@ -40,4 +40,14 @@ public class StatutFC extends Statut {
     	else 
     		return false;
     }
+    
+    /*vérifie que toutes les données sont présente dans le statut*/
+    public boolean verifStat()
+    {
+    	if(departement != null)
+    		if(modeFinancement != null)
+    			return true;
+    	
+    	return false;
+    }
 }

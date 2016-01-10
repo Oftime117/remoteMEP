@@ -21,4 +21,12 @@ public class StatutPeip extends StatutFI {
 		else 
 			return false;
     }
+    
+    /*vérifie que toutes les données sont présente dans le statut*/
+    public boolean verifStat()
+    {
+    	if(origin != null)
+    		return true;
+    	return false;
+    }
 }

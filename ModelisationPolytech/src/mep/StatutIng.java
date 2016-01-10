@@ -29,4 +29,6 @@ public abstract class StatutIng extends StatutFI {
     	return false;
     }
 
+    /*vérifie que toutes les données sont présente dans le statut*/
+    public abstract boolean verifStat();
 }
