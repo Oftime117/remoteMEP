@@ -3,7 +3,7 @@ package mep;
 import java.util.Date;
 
 //Classe abstraite représentant les Étudiants
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant> {
 /* Date d'entrée dans l'école */
     private Date dateEntree;
 
@@ -48,5 +48,21 @@ public class Etudiant {
     public Statut getStatut() {
         return this.statut;
     }
+
+	@Override
+	public String toString() {
+		return name + "\n\tDate d'entrée: " + dateEntree
+				+ "\n\tStatut : " + statut 
+				+ "\n\tPromotion : " + promotion
+				+ "\n\tEst un redoublant : " + redoublant;
+	}
+
+	@Override
+	public int compareTo(Etudiant o) {
+		// TODO Auto-generated method stub
+		return name.compareTo(o.getName());
+	}
+    
+    
 
 }

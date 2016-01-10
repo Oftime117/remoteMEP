@@ -38,8 +38,8 @@ public final class MFCIF extends ModeFinancement {
 
 	@Override
 	public String toString() {
-		return "Financement: Congé individuel de Formation: \n\tOragnisme Gestionnaire: " + orgaGest 
-				+ "\n\tNom de l'entreprise: " + nomEntreprise;
+		return "Congé individuel de Formation\n\t\tOrganisme Gestionnaire: " + orgaGest 
+				+ "\n\t\tNom de l'entreprise: " + nomEntreprise;
 	}
     
     
