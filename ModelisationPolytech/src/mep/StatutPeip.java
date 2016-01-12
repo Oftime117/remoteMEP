@@ -4,6 +4,8 @@ import exceptions.StatutException;
 
 public class StatutPeip extends StatutFI {
 
+	public final static String NOMSTATUT = StatutFI.NOMSTATUT + "PEIP"; 
+	
     public StatutPeip(Origin o) {
 		super(o);
 	}
@@ -23,16 +25,12 @@ public class StatutPeip extends StatutFI {
     /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
     public boolean verifStat() throws StatutException
     {
-    	try{
-    		if(origin != null)
-        		return true;
-        	return false;
-    	}catch (NullPointerException n){
-    		throw new  StatutException("le statut ne comporte pas d'origin");
-    	}
-    	
+    	if(origin == null)
+    		throw new StatutException("mauvaise origine");
+    		
+    	return true;
     }
-    
+
     
     /*v�rifie si le d�partement existe dans le cursus*/
     public boolean verifDep(Departement d)

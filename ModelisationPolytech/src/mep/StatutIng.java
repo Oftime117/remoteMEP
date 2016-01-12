@@ -3,7 +3,8 @@ package mep;
 import exceptions.StatutException;
 
 public abstract class StatutIng extends StatutFI {
-    
+	public final static String NOMSTATUT = StatutFI.NOMSTATUT + "ING"; 
+	
 	protected Departement departement;
 	
 	public StatutIng(Origin o, Departement dep) {

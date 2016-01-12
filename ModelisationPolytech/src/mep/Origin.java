@@ -2,6 +2,8 @@ package mep;
 
 
 public class Origin {
+	public final static String TYPEORIGIN = "O";
+	
     protected String etabOrigin;
 
 /* Diplome d'origine avant l'arrivée à Polytech (on suppose que les post bacs ont eu le Baccalauréat */

@@ -4,6 +4,7 @@ import exceptions.StatutException;
 
 public class StatutET extends StatutIng {
 	
+	public final static String NOMSTATUT = StatutIng.NOMSTATUT + "ET"; 
 
 	public StatutET(Origin o, Departement dep) {
 		super(o, dep);

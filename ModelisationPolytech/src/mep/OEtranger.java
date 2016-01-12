@@ -2,7 +2,7 @@ package mep;
 
 
 public class OEtranger extends Origin {
-
+	public final static String TYPEORIGIN = Origin.TYPEORIGIN + "ETR";
 	/* Pays d'origine */
     private String pays;
 

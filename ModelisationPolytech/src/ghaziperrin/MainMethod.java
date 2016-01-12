@@ -1,25 +1,50 @@
 package ghaziperrin;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import exceptions.EtudiantException;
-import exceptions.StatutException;
-import mep.*;
+import mep.Departement;
+import mep.Etudiant;
+import mep.MFCIF;
+import mep.MFDE;
+import mep.MFI;
+import mep.MFPF;
+import mep.ModeFinancement;
+import mep.OCycleIng;
+import mep.OCyclePrepa;
+import mep.OEtranger;
+import mep.OPostMaitrise;
+import mep.PolytechPSUD;
+import mep.StatutAPP;
+import mep.StatutET;
+import mep.StatutFC;
+import mep.StatutPeip;
 
 public class MainMethod {
 
 
 	public static void main(String[] args) {
-		Departement departement = new Departement("Informatique", true, true, true);
+	
+		ArrayList<String> depForm = new ArrayList<String>(3);
+		
+		
+		Departement departement = Departement.addNewDepartement("Informatique", depForm);
 		ModeFinancement modeFinancement = new MFCIF("caca", "boudin");
 		StatutFC fc = new StatutFC(departement, modeFinancement);
 		System.out.println(fc.toString());
 		
 		PolytechPSUD polytech = PolytechPSUD.getInstance();
 		
+		
+		
+		System.out.println("\n\n\n");
+		//new Departement("Matériaux", true, false, false);
+		Departement.printAllDepts();
+		
 
-		/*********************************** Ce qui suit consite � la cr�ation d'une base de donn�es test ***************************** */	
+		/*********************************** Ce qui suit consite à la création d'une base de données test ***************************** */	
 			
 			/*************** creation de diff�rentes origines ***************/
 			OCyclePrepa opeip1 = new OCyclePrepa("Lycee Mansart", "Bac S");
@@ -42,9 +67,9 @@ public class MainMethod {
 			MFI mfi1 = new MFI();
 			
 			/*************** cr�ation de D�partements ***************/
-			Departement info = new Departement ("Informatique", true, true, true);
-			Departement elec = new Departement ("Electronique", true, false, true);
-			Departement fcTest = new Departement ("Formation Continue Departement Test", false, true, false);
+			Departement info = Departement.addNewDepartement ("Informatique", depForm);
+			Departement elec = Departement.addNewDepartement ("Electronique", depForm);
+			Departement fcTest = Departement.addNewDepartement ("Formation Continue Departement Test", depForm);
 			
 			/*************** cr�ation de statuts ***************/
 			

@@ -2,6 +2,7 @@ package mep;
 
 
 public final class MFCIF extends ModeFinancement {
+	public final static String TYPEMF = ModeFinancement.TYPEMF + "CIF";
     private String orgaGest;
 
     private String nomEntreprise;

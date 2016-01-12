@@ -3,6 +3,8 @@ package mep;
 import exceptions.StatutException;
 
 public class StatutFC extends Statut {
+	
+	public final static String NOMSTATUT = Statut.NOMSTATUT + "FC"; 
     private Departement departement;
 
     private ModeFinancement modeFinancement;

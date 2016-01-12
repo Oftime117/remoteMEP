@@ -89,7 +89,6 @@ public class Etudiant implements Comparable<Etudiant> {
 
 	@Override
 	public int compareTo(Etudiant o) {
-		// TODO Auto-generated method stub
 		return name.compareTo(o.getName());
 	}
     
