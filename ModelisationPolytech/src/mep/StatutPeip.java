@@ -1,5 +1,6 @@
 package mep;
 
+import exceptions.StatutException;
 
 public class StatutPeip extends StatutFI {
 
@@ -20,19 +21,16 @@ public class StatutPeip extends StatutFI {
 
     
     /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
-    public boolean verifStat()
+    public boolean verifStat() throws StatutException
     {
-    	if(origin != null)
-    		return true;
-    	return false;
-    }
-    /*accorde la possibilite d'un changement de statut ou non*/
-    public  boolean changementStatut(Statut newStatut)
-    {
-		if(newStatut instanceof StatutIng)
-			return true;
-		else 
-			return false;
+    	try{
+    		if(origin != null)
+        		return true;
+        	return false;
+    	}catch (NullPointerException n){
+    		throw new  StatutException("le statut ne comporte pas d'origin");
+    	}
+    	
     }
     
     

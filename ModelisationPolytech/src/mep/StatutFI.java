@@ -1,5 +1,6 @@
 package mep;
 
+import exceptions.StatutException;
 
 public abstract class StatutFI extends Statut {
     protected Origin origin;
@@ -17,9 +18,6 @@ public abstract class StatutFI extends Statut {
     }
     /*permet de valider un stage ou non*/
     public abstract boolean stageValable(String nomEnt);
-    
-    /*accorde la possibilite d'un changement de statut ou non*/
-    public abstract boolean changementStatut(Statut newStatut);
     
     
 }

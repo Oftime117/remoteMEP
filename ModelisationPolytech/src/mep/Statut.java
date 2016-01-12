@@ -1,5 +1,6 @@
 package mep;
 
+import exceptions.StatutException;
 
 public abstract class Statut {
 
@@ -20,9 +21,6 @@ public abstract class Statut {
     /*permet de valider un stage ou non*/
     public abstract boolean stageValable(String nomEnt);
     
-    /*accorde la possibilite d'un changement de statut ou non*/
-    public abstract boolean changementStatut(Statut newStatut);
-    
     /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
-    public abstract boolean verifStat();
+    public abstract boolean verifStat() throws StatutException;
 }

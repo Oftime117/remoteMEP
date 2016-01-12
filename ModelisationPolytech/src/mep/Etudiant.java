@@ -2,6 +2,9 @@ package mep;
 
 import java.time.LocalDate;
 
+import exceptions.EtudiantException;
+import exceptions.StatutException;
+
 //Classe représentant les Étudiants
 public class Etudiant implements Comparable<Etudiant> {
 
@@ -15,10 +18,29 @@ public class Etudiant implements Comparable<Etudiant> {
 	protected Statut statut;    
     private Promotion promotion;
 
-    public Etudiant(String name, LocalDate dateEntree) {
-        this.name = name;
-        this.dateEntree = dateEntree;
-        this.redoublant = false;
+    public Etudiant(String name, LocalDate dateEntree, Statut s) throws EtudiantException {   
+    	try{
+    		  /* si le statut est incomplet*/
+        	if(s.verifStat() == false) {
+        		throw new EtudiantException("Statut incorrecte");
+        	}
+        	
+    	}
+    	catch (StatutException StatEx){
+    		throw new EtudiantException(StatEx.getMessage());
+    	}
+        	
+    		if(name == null || name.isEmpty()){
+    			throw new EtudiantException("Nom incorrect");
+    		}
+    		
+    		if(dateEntree == null || dateEntree.getYear() < 2000){
+    			throw new EtudiantException("Date d'entrée incorrect");
+    		}
+    		
+    		this.name = name;
+		    this.dateEntree = dateEntree;
+		    this.redoublant = false;
     }
 
     public LocalDate getDateEntree() {
@@ -82,28 +104,17 @@ public class Etudiant implements Comparable<Etudiant> {
     		return false;
     }
 
-    /*permet de changer de statut*/
-    public boolean changeStatut (Statut newStatut)
+    /*permet de changer de statut pour un peip*/
+    public void changeStatutPeip (Statut newStatut) throws EtudiantException
     {
-    	/* si le statut est incomplet*/
-    	if(newStatut.verifStat() != true) return false;
- 
-    	/*premiere inscription dans l'ecole*/
-    	if(statut == null)
-    	{
-    		
-    			statut = newStatut;
-    			return true;
+    	try{
+    		newStatut.verifStat();
+    		//if ()
+    		// TODO
     	}
-    	else
-    	{
-    		boolean res = getStatut().changementStatut(newStatut);
-        	
-        	if(res)
-        		statut = newStatut;
-        	return res;
+    	catch (StatutException c){
+    		throw new EtudiantException(c.getMessage());
     	}
-    	
     }
     
   

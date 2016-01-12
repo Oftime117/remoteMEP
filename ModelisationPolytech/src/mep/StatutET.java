@@ -1,5 +1,6 @@
 package mep;
 
+import exceptions.StatutException;
 
 public class StatutET extends StatutIng {
 	
@@ -23,13 +24,20 @@ public class StatutET extends StatutIng {
 	}
 	
 	/*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
-    public boolean verifStat()
+    public boolean verifStat() throws StatutException
     {
-    	if(departement != null)
-    		if(origin != null)
-    			return true;
+    	try{
+    		if(departement != null)
+        		if(origin != null)
+        			return true;
+        	return false;
+
+    	}
+    	catch (NullPointerException n)
+    	{
+    		throw new  StatutException("le statut est incomplet");
+    	}
     	
-    	return false;
     }
     
 

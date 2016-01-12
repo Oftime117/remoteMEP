@@ -1,5 +1,6 @@
 package mep;
 
+import exceptions.StatutException;
 
 public class StatutFC extends Statut {
     private Departement departement;
@@ -32,23 +33,15 @@ public class StatutFC extends Statut {
     	return (this.getModeFinancement().verifieStage(nomEnt));
     }
     
-    /*accorde la possibilite d'un changement de statut ou non*/
-    public boolean changementStatut(Statut newStatut)
+    /*vÃ©rifie que toutes les donnÃ©es sont prÃ©sente dans le statut*/
+    public boolean verifStat() throws StatutException
     {
-    	if(newStatut instanceof StatutFC)
-    		return true;
-    	else 
-    		return false;
-    }
-    
-    /*vérifie que toutes les données sont présente dans le statut*/
-    public boolean verifStat()
-    {
-    	if(departement != null)
-    		if(modeFinancement != null)
-    			return true;
     	
-    	return false;
+		if(departement == null ||modeFinancement == null )
+    		throw new StatutException("Statut non complet");
+
+    	
+    	return true;
     }
 
 
