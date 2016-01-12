@@ -2,6 +2,7 @@ package mep;
 
 
 public final class MFI extends ModeFinancement {
+	public final static String TYPEMF = ModeFinancement.TYPEMF + "FI";
     public MFI() {
     }
 

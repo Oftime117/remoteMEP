@@ -16,9 +16,6 @@ public class Etudiant implements Comparable<Etudiant> {
     private Promotion promotion;
 
     
-    
-
-
     public Etudiant(String name, LocalDate dateEntree) {
 
         this.name = name;
@@ -72,7 +69,6 @@ public class Etudiant implements Comparable<Etudiant> {
 
 	@Override
 	public int compareTo(Etudiant o) {
-		// TODO Auto-generated method stub
 		return name.compareTo(o.getName());
 	}
     
@@ -82,9 +78,9 @@ public class Etudiant implements Comparable<Etudiant> {
     public boolean validationStage5A(String entreprise)
     {
     	/* on verifie d'abords que l'eleve est en 5 eme annee.*/
-    	if ( this.getPromotion().anneeCourante == 5)
-    		return this.getStatut().stageValable(entreprise);
-    	else 
+//    	if ( this.getPromotion().anneeCourante == 5)
+//    		return this.getStatut().stageValable(entreprise);
+//    	else 
     		return false;
     }
     
@@ -97,7 +93,6 @@ public class Etudiant implements Comparable<Etudiant> {
     	/*premiere inscription dans l'ecole*/
     	if(statut == null)
     	{
-    		
     			statut = newStatut;
     			return true;
     	}

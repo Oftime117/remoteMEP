@@ -2,6 +2,8 @@ package mep;
 
 
 public class StatutFC extends Statut {
+	
+	public final static String NOMSTATUT = Statut.NOMSTATUT + "FC"; 
     private Departement departement;
 
     private ModeFinancement modeFinancement;
@@ -41,7 +43,7 @@ public class StatutFC extends Statut {
     		return false;
     }
     
-    /*vérifie que toutes les données sont présente dans le statut*/
+    /*vï¿½rifie que toutes les donnï¿½es sont prï¿½sente dans le statut*/
     public boolean verifStat()
     {
     	if(departement != null)

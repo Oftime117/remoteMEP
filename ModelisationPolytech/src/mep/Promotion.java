@@ -2,16 +2,18 @@ package mep;
 
 import java.util.HashMap;
 
-
 /* Classe représentant une promotion */
 public class Promotion {
-	/* Année de sortie (de promotion) d'un élève */
+/* Année de sortie (de promotion) d'un élève */
     private int anneeSortie;
+    private int anneeCourante;
     
-    /* Liste des élèves dans la promotion */
+  
+
+	/* Liste des élèves dans la promotion */
     private HashMap<String, Etudiant> etudiantsHT; 
 
-    /* Nom de bapteme de la promotion */
+	/* Nom de bapteme de la promotion */
     private String nomBapteme;
 
     public Promotion(int anneeSortie, String nomBapteme) {
@@ -26,6 +28,15 @@ public class Promotion {
     public void setAnneeSortie(int annee) {
         this.anneeSortie = annee;
     }
+    
+    public int getAnneeCourante() {
+  		return anneeCourante;
+  	}
+
+  	public void setAnneeCourante(int anneeCourante) {
+  		this.anneeCourante = anneeCourante;
+  	}
+
 
     public String getNomBapteme() {
         return this.nomBapteme;

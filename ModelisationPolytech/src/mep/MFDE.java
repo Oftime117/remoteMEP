@@ -2,6 +2,7 @@ package mep;
 
 
 public final class MFDE extends ModeFinancement {
+	public final static String TYPEMF = ModeFinancement.TYPEMF + "DE";
     public MFDE() {
     }
 

@@ -3,6 +3,7 @@ package mep;
 
 public class StatutAPP extends StatutIng {
 
+	public final static String NOMSTATUT = StatutIng.NOMSTATUT + "APP";
 
 	private String nomEntreprise;
 

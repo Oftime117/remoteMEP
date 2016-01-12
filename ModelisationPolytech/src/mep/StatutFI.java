@@ -4,6 +4,8 @@ package mep;
 public abstract class StatutFI extends Statut {
     protected Origin origin;
     
+    public final static String NOMSTATUT = Statut.NOMSTATUT + "FI"; 
+    
     public StatutFI(Origin o) {
     	this.origin = o;
     }

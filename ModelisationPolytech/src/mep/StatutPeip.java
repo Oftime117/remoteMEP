@@ -3,6 +3,8 @@ package mep;
 
 public class StatutPeip extends StatutFI {
 
+	public final static String NOMSTATUT = StatutFI.NOMSTATUT + "PEIP"; 
+	
     public StatutPeip(Origin o) {
 		super(o);
 	}
@@ -18,6 +20,14 @@ public class StatutPeip extends StatutFI {
 		return "Élève PeiP \n\tOrigine" + origin;
 	}
 
+    
+    /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
+    public boolean verifStat()
+    {
+    	if(origin != null)
+    		return true;
+    	return false;
+    }
     /*accorde la possibilite d'un changement de statut ou non*/
     public  boolean changementStatut(Statut newStatut)
     {
@@ -27,11 +37,11 @@ public class StatutPeip extends StatutFI {
 			return false;
     }
     
-    /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
-    public boolean verifStat()
+    
+    /*v�rifie si le d�partement existe dans le cursus*/
+    public boolean verifDep(Departement d)
     {
-    	if(origin != null)
-    		return true;
+    	/* pas de d�partement pour les peip*/
     	return false;
     }
 }

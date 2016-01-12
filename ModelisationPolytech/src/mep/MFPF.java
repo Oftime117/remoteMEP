@@ -2,6 +2,8 @@ package mep;
 
 
 public final class MFPF extends ModeFinancement {
+	public final static String TYPEMF = ModeFinancement.TYPEMF + "PF";
+	
     private String nomEntreprise;
 
     public MFPF(String nomEntreprise) {

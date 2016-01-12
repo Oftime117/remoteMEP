@@ -2,7 +2,8 @@ package mep;
 
 
 public abstract class StatutIng extends StatutFI {
-    
+	public final static String NOMSTATUT = StatutFI.NOMSTATUT + "ING"; 
+	
 	protected Departement departement;
 	
 	public StatutIng(Origin o, Departement dep) {
@@ -25,10 +26,10 @@ public abstract class StatutIng extends StatutFI {
     /*accorde la possibilite d'un changement de statut ou non*/
     public  boolean changementStatut(Statut newStatut)
     {
-    	/*un eleve ne peut pas aller d'alternant à classique*/
+    	/*un eleve ne peut pas aller d'alternant ï¿½ classique*/
     	return false;
     }
 
-    /*vérifie que toutes les données sont présente dans le statut*/
+    /*vï¿½rifie que toutes les donnï¿½es sont prï¿½sente dans le statut*/
     public abstract boolean verifStat();
 }
