@@ -11,9 +11,20 @@ public class StatutAPP extends StatutIng {
 	public StatutAPP(Origin o, Departement dep, String ent) {
 		super(o, dep);
 		nomEntreprise = ent;
+		anneeEntree = 3;
 	}
+	
+	
 	 
-    public String getNomEntreprise() {
+    @Override
+	public int getAnneeRestante() {
+		// TODO Auto-generated method stub
+		return origin.getAnneeRestante();
+	}
+
+
+
+	public String getNomEntreprise() {
         return this.nomEntreprise;
     }
 
@@ -50,7 +61,30 @@ public class StatutAPP extends StatutIng {
 	@Override
 	public String toString() {
 		return "Apprenti \n\tNom de L'entreprise : " + nomEntreprise
-				+ "\n\tDepartement: " + departement
-				+ "\n\tOrigine: " + origin;
+				+ "\n\tDepartement : " + departement
+				+ "\n\tOrigine : " + origin;
 	}
+
+	@Override
+	public boolean estCompatibleAvec(Statut stat) {
+		if(!(stat instanceof StatutAPP)) return false;
+		return super.estCompatibleAvec(stat);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) return false;
+		if(obj == this) return true;
+		try {
+			StatutAPP buff = (StatutAPP) obj;
+			if(buff.departement.equals(obj)) return false;
+			return super.equals(obj);
+		}
+		catch(NullPointerException e) {
+			return false;
+		}
+		
+	}
+	
+	
 }

@@ -13,12 +13,21 @@ public class StatutPeip extends StatutFI {
 	/* un etudiant en peip n'a pas de stage en 5 annee... il n'est pas en 5 eme annee...*/
     public  boolean stageValable(String nomEnt)
     {
+    	anneeEntree = 1;
     	return false;
     }
 
+    
+    
+	@Override
+	public int getAnneeRestante() {
+		// TODO Auto-generated method stub
+		return origin.getAnneeRestante();
+	}
+
 	@Override
 	public String toString() {
-		return "Élève PeiP \n\tOrigine" + origin;
+		return "Élève PeiP \n\tOrigine : " + origin;
 	}
 
     
@@ -38,4 +47,17 @@ public class StatutPeip extends StatutFI {
     	/* pas de d�partement pour les peip*/
     	return false;
     }
+
+	@Override
+	public boolean estCompatibleAvec(Statut stat) {
+		if(!(stat instanceof StatutPeip)) return false;
+		return super.estCompatibleAvec(stat);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
+    
+    
 }

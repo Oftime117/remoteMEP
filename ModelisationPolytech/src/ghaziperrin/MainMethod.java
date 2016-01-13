@@ -5,22 +5,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import exceptions.EtudiantException;
-import mep.Departement;
-import mep.Etudiant;
-import mep.MFCIF;
-import mep.MFDE;
-import mep.MFI;
-import mep.MFPF;
-import mep.ModeFinancement;
-import mep.OCycleIng;
-import mep.OCyclePrepa;
-import mep.OEtranger;
-import mep.OPostMaitrise;
-import mep.PolytechPSUD;
-import mep.StatutAPP;
-import mep.StatutET;
-import mep.StatutFC;
-import mep.StatutPeip;
+import mep.*;
+
 
 public class MainMethod {
 
@@ -29,19 +15,7 @@ public class MainMethod {
 	
 		ArrayList<String> depForm = new ArrayList<String>(3);
 		
-		
-		Departement departement = Departement.addNewDepartement("Informatique", depForm);
-		ModeFinancement modeFinancement = new MFCIF("caca", "boudin");
-		StatutFC fc = new StatutFC(departement, modeFinancement);
-		System.out.println(fc.toString());
-		
-		PolytechPSUD polytech = PolytechPSUD.getInstance();
-		
-		
-		
-		System.out.println("\n\n\n");
-		//new Departement("Matériaux", true, false, false);
-		Departement.printAllDepts();
+		PolytechPSUD psud = PolytechPSUD.getInstance();
 		
 
 		/*********************************** Ce qui suit consite à la création d'une base de données test ***************************** */	
@@ -49,6 +23,8 @@ public class MainMethod {
 			/*************** creation de diff�rentes origines ***************/
 			OCyclePrepa opeip1 = new OCyclePrepa("Lycee Mansart", "Bac S");
 			OCyclePrepa opeip2 = new OCyclePrepa("Lycee Pergot", "Bac S");
+			
+			Origin test = new OCycleIng("Unniversite Paris Ouest", "Maitrise en optronique");
 			
 			OEtranger oe1 = new OEtranger("University of Cork", "License informatique", "Irlande");
 			OEtranger oe2 = new OEtranger("University of Berlin", "License informatique", "Allemagne");
@@ -135,14 +111,18 @@ public class MainMethod {
 			e28, e29, e30, e31, e32, e33, e34,
 			e35, e36;
 			
+			for(int i = 0; i < 5;++i) {
+				psud.addPromotion(new Promotion(2015+i, i+1, "Nom de Promo nb°" + i));
+				
+			}
 			
 			
 			try{
 				/********** etudiant en peip **********/
 				
-				e1 = new Etudiant("Tom", LocalDate.parse("2014-09-15"), speip1);
+				 e1 = new Etudiant("Tom", LocalDate.parse("2013-09-15"), speip1);
 				
-				 e2 = new Etudiant("Tim", LocalDate.parse("2014-09-15"), speip1);
+				 e2 = new Etudiant("Tim", LocalDate.parse("2013-09-15"), speip1);
 				
 				 e3 = new Etudiant("Tam", LocalDate.parse("2014-09-15"), speip2);
 				
@@ -151,27 +131,27 @@ public class MainMethod {
 				/********** etudiant en ing classique **********/
 				 e5 = new Etudiant("Amin", LocalDate.parse("2013-09-15"), seti1);
 				
-				 e6 = new Etudiant("Raph", LocalDate.parse("2013-09-15"), seti2);
+				 e6 = new Etudiant("Raph", LocalDate.parse("2014-09-15"), seti2);
 				
 				 e7 = new Etudiant("Florian", LocalDate.parse("2013-09-15"), seti3);
 				
-				 e8 = new Etudiant("Thomas", LocalDate.parse("2012-09-15"), seti4);
+				 e8 = new Etudiant("Thomas", LocalDate.parse("2014-09-15"), seti4);
 				
-				 e9 = new Etudiant("Jean", LocalDate.parse("2012-09-15"), seti5);
+				 e9 = new Etudiant("Jean", LocalDate.parse("2015-09-15"), seti5);
 				
-				 e10 = new Etudiant("Kevin", LocalDate.parse("2012-09-15"), seti6);
+				 e10 = new Etudiant("Kevin", LocalDate.parse("2014-09-15"), seti6);
 				
-				 e11 = new Etudiant("Amirali", LocalDate.parse("2011-09-15"), sete1);
+				 e11 = new Etudiant("Amirali", LocalDate.parse("2013-09-15"), sete1);
 				
-				 e12 = new Etudiant("Suzette", LocalDate.parse("2011-09-15"), sete2);
+				 e12 = new Etudiant("Suzette", LocalDate.parse("2014-09-15"), sete2);
 				
-				 e13 = new Etudiant("Colette", LocalDate.parse("2011-09-15"), sete3);
+				 e13 = new Etudiant("Colette", LocalDate.parse("2013-09-15"), sete3);
 				
-				 e14 = new Etudiant("Funes", LocalDate.parse("2010-09-15"), sete4);
+				 e14 = new Etudiant("Funes", LocalDate.parse("2015-09-15"), sete4);
 				
-				 e15 = new Etudiant("Louis", LocalDate.parse("2011-09-15"), sete5);
+				 e15 = new Etudiant("Louis", LocalDate.parse("2013-09-15"), sete5);
 				
-				 e16 = new Etudiant("Albert", LocalDate.parse("2011-09-15"), sete6);
+				 e16 = new Etudiant("Albert", LocalDate.parse("2014-09-15"), sete6);
 				
 				/********** etudiant en ing apprentissage **********/
 				 e17 = new Etudiant("Windy", LocalDate.parse("2014-09-15"), sappi1);
@@ -190,16 +170,16 @@ public class MainMethod {
 				
 				 e24 = new Etudiant("Tristant", LocalDate.parse("2013-09-15"), sappe2);
 				
-				 e25 = new Etudiant("Gaetan", LocalDate.parse("2012-09-15"), sappe3);
+				 e25 = new Etudiant("Gaetan", LocalDate.parse("2013-09-15"), sappe3);
 				
-				 e26 = new Etudiant("Xavier", LocalDate.parse("2012-09-15"), sappe4);
+				 e26 = new Etudiant("Xavier", LocalDate.parse("2013-09-15"), sappe4);
 				
-				 e27 = new Etudiant("Emma", LocalDate.parse("2012-09-15"), sappe5);
+				 e27 = new Etudiant("Emma", LocalDate.parse("2013-09-15"), sappe5);
 				
-				 e28 = new Etudiant("Luc", LocalDate.parse("2012-09-15"), sappe6);
+				 e28 = new Etudiant("Luc", LocalDate.parse("2013-09-15"), sappe6);
 				
 				/********** etudiant en Formation continu **********/
-				 e29 = new Etudiant("Kylo", LocalDate.parse("2013-09-15"), sfci1);
+				 e29 = new Etudiant("Kylo", LocalDate.parse("2014-09-15"), sfci1);
 				
 				 e30 = new Etudiant("Jafar", LocalDate.parse("2013-09-15"), sfci2);
 				
@@ -216,9 +196,10 @@ public class MainMethod {
 				 e36 = new Etudiant("Moi", LocalDate.parse("2014-09-15"), sfcf4);
 				 
 				 /*************  creation de l'ecole ***************/
-					HashSet<Etudiant> listEt = new HashSet<Etudiant> ();
+				 
+				 ArrayList<Etudiant> listEt = new ArrayList<Etudiant> ();
 					
-					listEt.add(e1); listEt.add(e2); listEt.add(e3); listEt.add(e4); listEt.add(e5);
+					/*listEt.add(e1);*/ listEt.add(e2); listEt.add(e3); listEt.add(e4); listEt.add(e5);
 					listEt.add(e6); listEt.add(e7); listEt.add(e8); listEt.add(e9); listEt.add(e10);
 					listEt.add(e11); listEt.add(e12); listEt.add(e13); listEt.add(e14); listEt.add(e15);
 					listEt.add(e16); listEt.add(e17); listEt.add(e18); listEt.add(e19); listEt.add(e20);
@@ -228,13 +209,40 @@ public class MainMethod {
 					listEt.add(e36); 
 					
 					
+					
+					psud.getpromotionsCouranteHM().values().stream()
+					.sorted((promo1, promo2) -> Integer.compare(promo1.getAnneeCourante(), promo2.getAnneeCourante()) )
+					.forEach(promo -> {
+						System.out.println("Promotion: " + promo.toString());
+						//promo.getEtudiantsHM().values().stream().sorted().forEach(etud -> System.out.println(etud));
+					});
+					System.out.println("\n");
 				
+					ArrayList<Etudiant>[] nonRedoublant = new ArrayList[5];
+					for(int i = 0; i < nonRedoublant.length; ++i) nonRedoublant[i] = new ArrayList<Etudiant>();
+					nonRedoublant[4].add(e11);
+					nonRedoublant[4].add(e7);
+					nonRedoublant[3].add(e12);
+					nonRedoublant[3].add(e8);
+					nonRedoublant[2].add(e14);
+					nonRedoublant[2].add(e9);
+					nonRedoublant[2].add(e30);
+					nonRedoublant[2].add(e10);
+					psud.changementDAnnee(nonRedoublant, "schroutrmgrkgvjvpf");
+					psud.getpromotionsCouranteHM().values().stream()
+					.sorted((promo1, promo2) -> Integer.compare(promo1.getAnneeCourante(), promo2.getAnneeCourante()) )
+					.forEach(promo -> {
+						System.out.println("Promotion: " + promo.toString()+"\n");
+					});
+					
 			}
 			catch (EtudiantException e) {
 				
 			}
+			System.out.println("caca");
+			System.out.println(sappi1.estCompatibleAvec(new StatutAPP(null, null, "Lego")));
 			
-		
+			
 	}
 
 }

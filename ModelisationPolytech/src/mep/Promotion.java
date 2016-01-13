@@ -10,15 +10,17 @@ public class Promotion {
     
   
 
-	/* Liste des élèves dans la promotion */
-    private HashMap<String, Etudiant> etudiantsHT; 
+	/* Liste des élèves dans la promotion (la clé est leur name) */
+    private HashMap<String, Etudiant> etudiantsHM; 
 
 	/* Nom de bapteme de la promotion */
     private String nomBapteme;
 
-    public Promotion(int anneeSortie, String nomBapteme) {
+    public Promotion(int anneeSortie, int anneeCourante, String nomBapteme) {
         this.anneeSortie = anneeSortie;
         this.nomBapteme = nomBapteme;
+        this.anneeCourante = anneeCourante;
+        etudiantsHM = new HashMap<String, Etudiant>();
     }
 
     public int getAnneeSortie() {
@@ -49,21 +51,25 @@ public class Promotion {
 	@Override
 	public String toString() {
 		StringBuilder buff = new StringBuilder();
-		etudiantsHT.values().stream().sorted().forEach(etudiant -> buff.append(etudiant.getName()));
-		return "Promotion: " + nomBapteme 
+		etudiantsHM.values().stream().sorted().forEach(etudiant -> {
+			
+			buff.append(etudiant.getName());
+			buff.append(", ");
+		});
+		return  nomBapteme 
 				+ "( " + anneeSortie + " )" + "\nListes des élèves de la promo: " + buff.toString();
 	}
 
 	/**
-	 * @return the etudiantsHT
+	 * @return the etudiantsHM
 	 */
-	public HashMap<String, Etudiant> getEtudiantsHT() {
-		return etudiantsHT;
+	public HashMap<String, Etudiant> getEtudiantsHM() {
+		return etudiantsHM;
 	}
     
 	
 	public void addEtudiant(Etudiant e) {
-		etudiantsHT.computeIfAbsent(e.getName(), etud -> e);
+		etudiantsHM.computeIfAbsent(e.getName(), etud -> e);
 		
 	}
     

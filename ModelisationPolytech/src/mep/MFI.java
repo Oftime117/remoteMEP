@@ -15,4 +15,11 @@ public final class MFI extends ModeFinancement {
 	public String toString() {
 		return "Individuel";
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof MFI)) return false;
+		return super.equals(obj);
+	}
+	
 }

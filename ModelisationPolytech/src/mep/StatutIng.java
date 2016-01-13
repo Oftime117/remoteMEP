@@ -26,4 +26,36 @@ public abstract class StatutIng extends StatutFI {
     
     /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
     public abstract boolean verifStat() throws StatutException;
+
+
+	@Override
+	public boolean estCompatibleAvec(Statut stat) {
+		if(this.equals(stat)) return true;
+		try {
+			StatutIng buff = (StatutIng) stat;
+			if(buff.departement != null) 
+				if(this.departement != null) {
+					if(!departement.equals(buff.departement)) return false;
+				} else return false; 
+			return super.estCompatibleAvec(stat);
+		} catch(ClassCastException e) {
+			return false;
+		}
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) return false;
+    	if(obj == this) return true;
+    	try {
+    		StatutIng buff = (StatutIng) obj;
+    		return ((this.departement == buff.departement) && 
+    				(super.equals(obj)));
+    	} catch (ClassCastException e) {
+    		return false;
+    	}
+	}
+    
+    
 }

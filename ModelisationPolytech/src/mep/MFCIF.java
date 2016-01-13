@@ -43,4 +43,45 @@ public final class MFCIF extends ModeFinancement {
 				+ "\n\t\tNom de l'entreprise: " + nomEntreprise;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((nomEntreprise == null) ? 0 : nomEntreprise.hashCode());
+		result = prime * result
+				+ ((orgaGest == null) ? 0 : orgaGest.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof MFCIF))
+			return false;
+		
+		try {
+			MFCIF buff = (MFCIF) obj;
+			if (nomEntreprise == null) {
+				if (buff.nomEntreprise != null)
+					return false;
+			} else if (!nomEntreprise.equals(buff.nomEntreprise))
+				return false;
+			if (orgaGest == null) {
+				if (buff.orgaGest != null)
+					return false;
+			} else if (!orgaGest.equals(buff.orgaGest))
+				return false;
+			return true;
+		}
+		catch(NullPointerException e) {
+			return false;
+		}
+	}
+
+	
+	
 }

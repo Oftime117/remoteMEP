@@ -18,10 +18,10 @@ public class Etudiant implements Comparable<Etudiant> {
 	protected Statut statut;    
     private Promotion promotion;
 
-    public Etudiant(String name, LocalDate dateEntree, Statut s) throws EtudiantException {   
+    public Etudiant(String name, LocalDate dateEntree, Statut statut) throws EtudiantException {   
     	try{
     		  /* si le statut est incomplet*/
-        	if(s.verifStat() == false) {
+        	if(statut.verifStat() == false) {
         		throw new EtudiantException("Statut incorrecte");
         	}
         	
@@ -40,7 +40,12 @@ public class Etudiant implements Comparable<Etudiant> {
     		
     		this.name = name;
 		    this.dateEntree = dateEntree;
+		    this.statut = statut;
 		    this.redoublant = false;
+		    System.out.println(this.dateEntree.getYear() );
+		    System.out.println(statut.getAnneeRestante());
+		    this.promotion = PolytechPSUD.getInstance().getpromotionsCouranteHM().get(this.dateEntree.getYear() + statut.getAnneeRestante());
+		    this.promotion.addEtudiant(this);
     }
 
     public LocalDate getDateEntree() {
@@ -83,7 +88,7 @@ public class Etudiant implements Comparable<Etudiant> {
 	public String toString() {
 		return name + "\n\tDate d'entrée: " + dateEntree
 				+ "\n\tStatut : " + statut 
-				+ "\n\tPromotion : " + promotion
+				+ "\n\tPromotion : " + promotion.getNomBapteme() + " (" + promotion.getAnneeCourante() + ") "
 				+ "\n\tEst un redoublant : " + redoublant;
 	}
 
@@ -115,6 +120,7 @@ public class Etudiant implements Comparable<Etudiant> {
     		throw new EtudiantException(c.getMessage());
     	}
     }
+    
     
   
 }

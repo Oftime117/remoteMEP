@@ -16,4 +16,10 @@ public final class MFDE extends ModeFinancement {
 	public String toString() {
 		return "Demandeur d'emploi";
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof MFDE)) return false;
+		return super.equals(obj);
+	}
 }

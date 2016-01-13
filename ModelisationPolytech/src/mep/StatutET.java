@@ -10,6 +10,16 @@ public class StatutET extends StatutIng {
 		super(o, dep);
 	}
 
+	
+	
+	@Override
+	public int getAnneeRestante() {
+		// TODO Auto-generated method stub
+		return origin.getAnneeRestante();
+	}
+
+
+
 	/* un etudiant en cursus initial et non alternant 
 	 * peux aller dans n'importe qu'elle entreprise
 	 * il faut juste v�rifier qu'il est en 5 ann�e*/
@@ -21,7 +31,7 @@ public class StatutET extends StatutIng {
 
 	@Override
 	public String toString() {
-		return "Étudiant \n\tDepartement: " + departement + "\n\tOrigine: " + origin;
+		return "Étudiant \n\tDepartement: " + departement + "\n\tOrigine : " + origin;
 	}
 	
 	/*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
@@ -41,5 +51,17 @@ public class StatutET extends StatutIng {
     	
     }
     
+	@Override
+	public boolean estCompatibleAvec(Statut stat) {
+		if(!(stat instanceof StatutET)) return false;
+		return super.estCompatibleAvec(stat);
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+    
+    
 }

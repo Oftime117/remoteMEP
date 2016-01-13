@@ -14,7 +14,17 @@ public class StatutFC extends Statut {
         this.departement = departement;
     }
 
-    public Departement getDepartement() {
+    
+    
+    @Override
+	public int getAnneeRestante() {
+		// TODO Auto-generated method stub
+		return 2;
+	}
+
+
+
+	public Departement getDepartement() {
         return this.departement;
     }
 
@@ -49,8 +59,43 @@ public class StatutFC extends Statut {
 
 	@Override
 	public String toString() {
-		return "Formation Continue \n\tDepartement: " + departement 
-				+ "\n\tMode de financement: " + modeFinancement;
+		return "Formation Continue \n\tDepartement : " + departement 
+				+ "\n\tMode de financement : " + modeFinancement;
 	}
 
+	@Override
+	public boolean estCompatibleAvec(Statut stat) {
+		if(stat == null) return false;
+		if(stat == this) return true;
+		try {
+			StatutFC buff = (StatutFC) stat;
+			if(buff.departement != null){
+				if(this.departement != null) {
+					if(! (this.departement.equals(buff.departement))) return false;
+				} else return false;
+			}
+			if(buff.modeFinancement != null){
+				if(this.modeFinancement!= null) {
+					if(! (this.modeFinancement.equals(buff.modeFinancement))) return false;
+				} else return false;
+			}
+			return super.estCompatibleAvec(stat);
+		} catch(ClassCastException e) {
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null) return false;
+		if(obj == this) return true;
+		try {
+			StatutFC buff = (StatutFC) obj;
+			if(buff.departement.equals(obj)) return false;
+			return super.equals(obj);
+		}
+		catch(NullPointerException e) {
+			return false;
+		}
+	}
 }

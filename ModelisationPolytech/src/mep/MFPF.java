@@ -33,4 +33,22 @@ public final class MFPF extends ModeFinancement {
 	public String toString() {
 		return "Plan Formation \n\tNom de l'entreprise: " + nomEntreprise ;
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		try {
+			MFPF buff = (MFPF) obj;
+			return buff.nomEntreprise.equals(buff.nomEntreprise);
+		}
+		catch(NullPointerException e) {
+			return false;
+		}
+	}
+	
+	
 }
