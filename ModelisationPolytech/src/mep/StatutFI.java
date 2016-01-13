@@ -20,6 +20,7 @@ public abstract class StatutFI extends Statut {
     }
     /*permet de valider un stage ou non*/
     public abstract boolean stageValable(String nomEnt);
+
     
     
 }

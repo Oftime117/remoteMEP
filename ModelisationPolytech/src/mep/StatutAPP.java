@@ -12,45 +12,36 @@ public class StatutAPP extends StatutIng {
 		super(o, dep);
 		nomEntreprise = ent;
 	}
-	 
-    public String getNomEntreprise() {
-        return this.nomEntreprise;
-    }
 
-    public void setNomEntreprise(String nom) {
-        this.nomEntreprise = nom;
-    }
-    
-    /* permet de verifier le stage de 5 eme ann�e*/
-    public  boolean stageValable(String nomEnt)
-    {
-    	if(nomEnt.compareTo(nomEntreprise) == 0)
-    		return true;
-    	else
-    		return false;
-    }
-    
-    /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
-    public boolean verifStat() throws StatutException
-    {
-    	try{
-    		if(departement != null)
-        		if(origin != null)
-        			if(nomEntreprise != null)
-        				return true;
-        	
-        	return false;
-    	}
-    	catch(NullPointerException n){
-    		throw new  StatutException("le statut est incomplet");
-    	}
-    	
-    }
+	public String getNomEntreprise() {
+		return this.nomEntreprise;
+	}
+
+	public void setNomEntreprise(String nom) {
+		this.nomEntreprise = nom;
+	}
+
+	/* permet de verifier le stage de 5 eme ann�e */
+	@Override
+	public boolean stageValable(String nomEnt) {
+		if (nomEnt.compareTo(nomEntreprise) == 0)
+			return true;
+		else
+			return false;
+	}
+
+	/* v�rifie que toutes les donn�es sont pr�sente dans le statut */
+	@Override
+	public boolean verifStat() {
+		if (departement != null || origin != null || nomEntreprise != null)
+			return true;
+
+		return false;
+	}
 
 	@Override
 	public String toString() {
-		return "Apprenti \n\tNom de L'entreprise : " + nomEntreprise
-				+ "\n\tDepartement: " + departement
+		return "Apprenti \n\tNom de L'entreprise : " + nomEntreprise + "\n\tDepartement: " + departement
 				+ "\n\tOrigine: " + origin;
 	}
 }

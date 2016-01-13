@@ -4,6 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import javax.sound.midi.MidiDevice.Info;
+
+import org.omg.Messaging.SyncScopeHelper;
+
 import exceptions.EtudiantException;
 import mep.Departement;
 import mep.Etudiant;
@@ -17,6 +21,7 @@ import mep.OCyclePrepa;
 import mep.OEtranger;
 import mep.OPostMaitrise;
 import mep.PolytechPSUD;
+import mep.Statut;
 import mep.StatutAPP;
 import mep.StatutET;
 import mep.StatutFC;
@@ -30,18 +35,7 @@ public class MainMethod {
 		ArrayList<String> depForm = new ArrayList<String>(3);
 		
 		
-		Departement departement = Departement.addNewDepartement("Informatique", depForm);
-		ModeFinancement modeFinancement = new MFCIF("caca", "boudin");
-		StatutFC fc = new StatutFC(departement, modeFinancement);
-		System.out.println(fc.toString());
-		
-		PolytechPSUD polytech = PolytechPSUD.getInstance();
-		
-		
-		
-		System.out.println("\n\n\n");
-		//new Departement("Matériaux", true, false, false);
-		Departement.printAllDepts();
+
 		
 
 		/*********************************** Ce qui suit consite à la création d'une base de données test ***************************** */	
@@ -234,7 +228,6 @@ public class MainMethod {
 				
 			}
 			
-		
 	}
-
+	
 }

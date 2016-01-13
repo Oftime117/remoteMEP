@@ -3,54 +3,53 @@ package mep;
 import exceptions.StatutException;
 
 public class StatutFC extends Statut {
-	
-	public final static String NOMSTATUT = Statut.NOMSTATUT + "FC"; 
-    private Departement departement;
 
-    private ModeFinancement modeFinancement;
+	public final static String NOMSTATUT = Statut.NOMSTATUT + "FC";
+	private Departement departement;
 
-    public StatutFC(Departement departement, ModeFinancement modeFinancement) {
-        this.modeFinancement = modeFinancement;
-        this.departement = departement;
-    }
+	private ModeFinancement modeFinancement;
 
-    public Departement getDepartement() {
-        return this.departement;
-    }
+	public StatutFC(Departement departement, ModeFinancement modeFinancement) {
+		this.modeFinancement = modeFinancement;
+		this.departement = departement;
+	}
 
-    public void setDepartement(Departement dept) {
-        this.departement = dept;
-    }
+	public Departement getDepartement() {
+		return this.departement;
+	}
 
-    public ModeFinancement getModeFinancement() {
-        return this.modeFinancement;
-    }
+	public ModeFinancement getModeFinancement() {
+		return this.modeFinancement;
+	}
 
-    public void setModeFinancement(ModeFinancement mode) {
-        this.modeFinancement = mode;
-    }
+	public void setModeFinancement(ModeFinancement mode) {
+		this.modeFinancement = mode;
+	}
 
-    public  boolean stageValable(String nomEnt)
-    {
-    	return (this.getModeFinancement().verifieStage(nomEnt));
-    }
-    
-    /*vérifie que toutes les données sont présente dans le statut*/
-    public boolean verifStat() throws StatutException
-    {
-    	
-		if(departement == null ||modeFinancement == null )
-    		throw new StatutException("Statut non complet");
+	@Override
+	public boolean stageValable(String nomEnt) {
+		return (this.getModeFinancement().verifieStage(nomEnt));
+	}
 
-    	
-    	return true;
-    }
+	/* vérifie que toutes les données sont présente dans le statut */
+	@Override
+	public boolean verifStat() {
 
+		if (departement == null || modeFinancement == null)
+			return false;
+
+		return true;
+	}
 
 	@Override
 	public String toString() {
-		return "Formation Continue \n\tDepartement: " + departement 
-				+ "\n\tMode de financement: " + modeFinancement;
+		return "Formation Continue \n\tDepartement: " + departement + "\n\tMode de financement: " + modeFinancement;
+	}
+
+	/* Permet de changer de département */
+	@Override
+	public void setDep(Departement dep) throws StatutException {
+		departement = dep;
 	}
 
 }

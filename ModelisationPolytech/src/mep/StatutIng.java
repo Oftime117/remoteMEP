@@ -20,10 +20,10 @@ public abstract class StatutIng extends StatutFI {
     public void setDepartement(Departement dept) {
         this.departement = dept;
     }
-    
-    /*permet de valider un stage ou non*/
-    public abstract boolean stageValable(String nomEnt);
-    
-    /*v�rifie que toutes les donn�es sont pr�sente dans le statut*/
-    public abstract boolean verifStat() throws StatutException;
+        
+    /*Permet de changer de département*/
+    @Override
+	public void setDep(Departement dep) throws StatutException {
+    	departement = dep;
+    }
 }

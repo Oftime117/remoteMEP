@@ -46,7 +46,7 @@ public class Departement {
     }
     
     /* Permet de récupérer l'unique instance de département avec le nom "nom" */
-    public Departement getDepartement(String nom) throws IllegalArgumentException {
+    public static Departement getDepartement(String nom) throws IllegalArgumentException {
     	if(!depHM.containsKey(nom.toUpperCase())) {
     		throw new IllegalArgumentException("Département non existant");
     	}
