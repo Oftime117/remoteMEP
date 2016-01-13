@@ -44,4 +44,14 @@ public class StatutAPP extends StatutIng {
 		return "Apprenti \n\tNom de L'entreprise : " + nomEntreprise + "\n\tDepartement: " + departement
 				+ "\n\tOrigine: " + origin;
 	}
+	
+	/*
+	 * permet de savoir si un étudiant peut rentrer en Ing.
+	 */
+	public  boolean admissionFIIng(){
+		/*Doit avoir une entreprise*/
+		if(nomEntreprise == null || nomEntreprise.isEmpty())
+			return false;
+		return true;
+	}
 }

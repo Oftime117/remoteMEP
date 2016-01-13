@@ -111,7 +111,6 @@ public class Etudiant implements Comparable<Etudiant> {
 				throw new EtudiantException("Un statut Peip ne peut être changé que par un statut ING");
 		} else
 			throw new EtudiantException("Seul le statut Peip peut être changé");
-
 	}
 
 	/* permet à un étudiant de changer de déparement */
@@ -132,7 +131,7 @@ public class Etudiant implements Comparable<Etudiant> {
 
 	public void changeModeFinancement(ModeFinancement m) throws EtudiantException {
 		if (statut instanceof StatutFC) {
-			if (m == null)
+			if (!(m.verifModeFinance()))
 				throw new EtudiantException("Le mode de financement est incomplet");
 
 			((StatutFC) statut).setModeFinancement(m);

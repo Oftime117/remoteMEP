@@ -21,6 +21,7 @@ public final class MFPF extends ModeFinancement {
     }
 
     /*l'eleve doit faire son stage dans son entreprise*/
+    @Override
     public  boolean verifieStage(String nomEnt)
     {
     	if (this.getNomEntreprise().compareTo(nomEnt) == 0)
@@ -32,5 +33,13 @@ public final class MFPF extends ModeFinancement {
 	@Override
 	public String toString() {
 		return "Plan Formation \n\tNom de l'entreprise: " + nomEntreprise ;
+	}
+	
+	/*permet de vérifier les modes de financement*/
+	@Override
+	public  boolean verifModeFinance(){
+		if(nomEntreprise == null || nomEntreprise.isEmpty())
+			return false;
+		return true;
 	}
 }

@@ -27,4 +27,7 @@ public abstract class Statut {
 
 	/* Permet de changer de département */
 	public abstract void setDep(Departement dep) throws StatutException;
+	
+	/* Permet de récupérer le département*/
+	public abstract Departement getDepartement() throws StatutException;
 }

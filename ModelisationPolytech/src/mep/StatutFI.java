@@ -18,9 +18,6 @@ public abstract class StatutFI extends Statut {
     public void setOrigin(Origin origin) {
         this.origin = origin;
     }
-    /*permet de valider un stage ou non*/
-    public abstract boolean stageValable(String nomEnt);
-
-    
+        
     
 }

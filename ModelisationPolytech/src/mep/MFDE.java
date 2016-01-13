@@ -7,6 +7,7 @@ public final class MFDE extends ModeFinancement {
     }
 
     /*l'eleve n'a pas de contraintes particuliere pour son stage*/
+    @Override
     public  boolean verifieStage(String nomEnt)
     {
     	return true;
@@ -15,5 +16,12 @@ public final class MFDE extends ModeFinancement {
 	@Override
 	public String toString() {
 		return "Demandeur d'emploi";
+	}
+	
+	/*permet de vérifier les modes de financement*/
+	@Override
+	public  boolean verifModeFinance(){
+		/*il n'y a pas de vérification particulière à faire*/
+		return true;
 	}
 }

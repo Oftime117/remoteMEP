@@ -14,7 +14,8 @@ public class StatutFC extends Statut {
 		this.departement = departement;
 	}
 
-	public Departement getDepartement() {
+	@Override
+	public Departement getDepartement() throws StatutException{
 		return this.departement;
 	}
 
@@ -35,7 +36,7 @@ public class StatutFC extends Statut {
 	@Override
 	public boolean verifStat() {
 
-		if (departement == null || modeFinancement == null)
+		if (departement == null || !(modeFinancement.verifModeFinance()) )
 			return false;
 
 		return true;
@@ -50,6 +51,14 @@ public class StatutFC extends Statut {
 	@Override
 	public void setDep(Departement dep) throws StatutException {
 		departement = dep;
+	}
+	
+	/*
+	 * permet de savoir si un étudiant peut rentrer en Formation continu.
+	 */
+	public  boolean admissionFC(){
+		
+		return modeFinancement.verifModeFinance();
 	}
 
 }

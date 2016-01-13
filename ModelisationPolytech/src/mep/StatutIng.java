@@ -13,12 +13,9 @@ public abstract class StatutIng extends StatutFI {
 	}
 
 
-    public Departement getDepartement() {
+	@Override
+    public Departement getDepartement() throws StatutException {
         return this.departement;
-    }
-
-    public void setDepartement(Departement dept) {
-        this.departement = dept;
     }
         
     /*Permet de changer de département*/
@@ -26,4 +23,9 @@ public abstract class StatutIng extends StatutFI {
 	public void setDep(Departement dep) throws StatutException {
     	departement = dep;
     }
+    
+    /*
+	 * permet de savoir si un étudiant peut rentrer en Ing.
+	 */
+	public abstract boolean admissionFIIng();
 }

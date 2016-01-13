@@ -8,7 +8,6 @@ public class Promotion {
     private int anneeSortie;
     private int anneeCourante;
     
-  
 
 	/* Liste des élèves dans la promotion */
     private HashMap<String, Etudiant> etudiantsHT; 

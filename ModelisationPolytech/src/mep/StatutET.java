@@ -34,5 +34,13 @@ public class StatutET extends StatutIng {
 		return false;
 
 	}
+	
+	/*
+	 * permet de savoir si un étudiant peut rentrer en Ing.
+	 */
+	public  boolean admissionFIIng(){
+		/*pas de condition particulière*/
+		return true;
+	}
 
 }

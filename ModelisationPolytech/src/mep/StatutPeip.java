@@ -39,12 +39,18 @@ public class StatutPeip extends StatutFI {
 		throw new StatutException("un Peip n'a pas de departement");
 	}
 
+	/* Permet de récupérer le département */
+	@Override
+	public Departement getDepartement() throws StatutException {
+		throw new StatutException("un Peip n'a pas de departement");
+	}
+
 	/*
 	 * permet de savoir si un étudiant peut rentrer en Peip en fonction de sa
 	 * note au concour.
 	 */
 	public boolean admissionFIBac(double noteConcour) {
-		if (noteConcour > 15)
+		if (noteConcour > 14)
 			return true;
 		return false;
 	}

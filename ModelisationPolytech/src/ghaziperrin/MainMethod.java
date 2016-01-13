@@ -161,7 +161,7 @@ public class MainMethod {
 				
 				 e13 = new Etudiant("Colette", LocalDate.parse("2011-09-15"), sete3);
 				
-				 e14 = new Etudiant("Funes", LocalDate.parse("2010-09-15"), sete4);
+				 e14 = new Etudiant("Funes", LocalDate.parse("2011-09-15"), sete4);
 				
 				 e15 = new Etudiant("Louis", LocalDate.parse("2011-09-15"), sete5);
 				
